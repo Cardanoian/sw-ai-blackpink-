@@ -1,0 +1,25 @@
+.box {
+  display: flex;
+}
+
+.blackpinkBtn {
+  background-color: pink;
+  color: darkblue;
+  width: 6rem;
+  height: 4rem;
+  margin: 1rem;
+  font-size: xx-large;
+  font-weight: 900;
+}
+
+#blackpink {
+  background-color: black;
+  color: lightgray;
+  width: 8rem;
+  height: 4rem;
+  margin: 1rem;
+  font-size: xx-large;
+  position: fixed;
+  left: 10%;
+  top: 10%;
+}
