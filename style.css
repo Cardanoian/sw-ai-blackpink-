@@ -1,25 +1,457 @@
-.box {
+/* 전체 기본 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: linear-gradient(135deg, #ff6b9d, #c44569, #f8b500, #ff6b9d);
+  background-size: 400% 400%;
+  animation: gradientMove 8s ease infinite;
+  min-height: 100vh;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* 배경 애니메이션 */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="30" r="1.5" fill="rgba(255,255,255,0.15)"/><circle cx="40" cy="60" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="70" r="2.5" fill="rgba(255,255,255,0.05)"/></svg>');
+  animation: sparkle 10s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes sparkle {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+  }
+}
+
+/* 헤더 스타일 */
+.header {
+  position: relative;
+  z-index: 10;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(255, 107, 157, 0.5);
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.logo-text {
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(45deg, #ff6b9d, #ffd700, #ff6b9d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(255, 107, 157, 0.5);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 20px rgba(255, 107, 157, 0.5);
+  }
+  to {
+    text-shadow: 0 0 40px rgba(255, 107, 157, 0.8);
+  }
+}
+
+.logo-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 0.5rem;
+}
+
+.nav {
   display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.nav-item {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  min-width: 9rem;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item:hover {
+  background: rgba(255, 107, 157, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+}
+
+/* 메인 콘텐츠 */
+.main-content {
+  position: relative;
+  z-index: 5;
+  padding: 2rem;
+}
+
+/* 히어로 섹션 */
+.hero-section {
+  text-align: center;
+  padding: 4rem 0;
+  margin-bottom: 3rem;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px rgba(255, 107, 157, 0.8);
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+}
+
+.crown {
+  font-size: 3rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* 섹션 타이틀 */
+.section-title {
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #ffd700;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+/* 멤버 섹션 */
+.members-section {
+  margin-bottom: 4rem;
+}
+
+.member-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 1.5rem;
+  text-align: center;
+  border: 2px solid rgba(255, 107, 157, 0.3);
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.member-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(255, 107, 157, 0.4);
+  border-color: rgba(255, 107, 157, 0.8);
+}
+
+.member-avatar {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.member-avatar:nth-child(1) {
+  animation-delay: 0s;
+}
+.member-avatar:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.member-avatar:nth-child(3) {
+  animation-delay: 1s;
+}
+.member-avatar:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 .blackpinkBtn {
-  background-color: pink;
-  color: darkblue;
+  background: linear-gradient(45deg, #ff6b9d, #c44569);
+  color: rgb(189, 123, 123);
   width: 6rem;
   height: 4rem;
   margin: 1rem;
-  font-size: xx-large;
+  font-size: 1.3rem;
   font-weight: 900;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.blackpinkBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.blackpinkBtn:hover::before {
+  left: 100%;
+}
+
+.blackpinkBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(255, 107, 157, 0.6);
+}
+
+.blackpinkBtn:active {
+  transform: scale(0.95);
+}
+
+.member-role {
+  font-size: 0.9rem;
+  color: #ffd700;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.member-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* 뉴스 섹션 */
+.latest-section {
+  margin-bottom: 4rem;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.news-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid rgba(255, 107, 157, 0.3);
+  transition: all 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(255, 107, 157, 0.3);
+}
+
+.news-emoji {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.news-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #ffd700;
+}
+
+.news-card p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+}
+
+#blackpink:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5);
+}
+
+.btn-text {
+  font-size: 0.7rem;
+  margin-bottom: 0.2rem;
+}
+
+.btn-emoji {
+  font-size: 1.2rem;
+  animation: sparkleRotate 2s linear infinite;
+}
+
+@keyframes sparkleRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 푸터 */
+.footer {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 2rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .logo-text {
+    font-size: 2rem;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .member-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* 이 부분 아래를 수정하시오. */
+
+.box {
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  display: flex;
 }
 
 #blackpink {
-  background-color: black;
-  color: lightgray;
-  width: 8rem;
-  height: 4rem;
-  margin: 1rem;
-  font-size: xx-large;
   position: fixed;
-  left: 10%;
-  top: 10%;
+  bottom: 2rem;
+  right: 2rem;
+  width: 4rem;
+  height: 4rem;
+  background: linear-gradient(45deg, #2c2c2c, #4a4a4a);
+  color: white;
+  width: 5rem;
+  height: 5rem;
+  border: none;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #ffd700;
 }

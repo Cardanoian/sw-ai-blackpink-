@@ -3,17 +3,121 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>버튼 테스트</title>
+    <title>BLACKPINK - 팬 사이트</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="box">
-      <button class="blackpinkBtn" id="jisu">지수</button>
-      <button class="blackpinkBtn" id="jenny">제니</button>
-      <button class="blackpinkBtn" id="rose">로제</button>
-      <button class="blackpinkBtn" id="lisa">리사</button>
-    </div>
-    <button id="blackpink">블랙핑크</button>
+    <div class="background-animation"></div>
+
+    <header class="header">
+      <div class="logo">
+        <h1 class="logo-text">BLACKPINK</h1>
+        <p class="logo-subtitle">블랙핑크 팬 사이트</p>
+      </div>
+      <nav class="nav">
+        <a href="#" class="nav-item">HOME</a>
+        <a href="#" class="nav-item">MEMBERS</a>
+        <a href="#" class="nav-item">MUSIC</a>
+        <a href="#" class="nav-item">GALLERY</a>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <section class="hero-section">
+        <div class="hero-content">
+          <h2 class="hero-title">만나보세요, 블랙핑크!</h2>
+          <p class="hero-subtitle">세계를 사로잡은 K-POP 아이콘들</p>
+          <div class="crown">👑</div>
+        </div>
+      </section>
+
+      <section class="members-section">
+        <h3 class="section-title">MEMBERS</h3>
+        <div class="box">
+          <div class="member-card">
+            <div class="member-avatar">🎤</div>
+            <button class="blackpinkBtn" id="jisu">지수</button>
+            <p class="member-role">메인 보컬</p>
+            <div class="member-info">
+              <span class="member-birth">1995.01.03</span>
+              <span class="member-country">🇰🇷 한국</span>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-avatar">🎵</div>
+            <button class="blackpinkBtn" id="jenny">제니</button>
+            <p class="member-role">메인 래퍼</p>
+            <div class="member-info">
+              <span class="member-birth">1996.01.16</span>
+              <span class="member-country">🇰🇷 한국</span>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-avatar">🌹</div>
+            <button class="blackpinkBtn" id="rose">로제</button>
+            <p class="member-role">메인 보컬</p>
+            <div class="member-info">
+              <span class="member-birth">1997.02.11</span>
+              <span class="member-country">🇳🇿 뉴질랜드</span>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-avatar">💃</div>
+            <button class="blackpinkBtn" id="lisa">리사</button>
+            <p class="member-role">메인 댄서</p>
+            <div class="member-info">
+              <span class="member-birth">1997.03.27</span>
+              <span class="member-country">🇹🇭 태국</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="latest-section">
+        <h3 class="section-title">LATEST NEWS</h3>
+        <div class="news-grid">
+          <div class="news-card">
+            <div class="news-emoji">🎬</div>
+            <h4>뮤직비디오 공개</h4>
+            <p>최신 뮤직비디오를 확인하세요!</p>
+          </div>
+          <div class="news-card">
+            <div class="news-emoji">🎪</div>
+            <h4>월드 투어 소식</h4>
+            <p>전 세계 팬들과 만나요!</p>
+          </div>
+          <div class="news-card">
+            <div class="news-emoji">📸</div>
+            <h4>포토카드 출시</h4>
+            <p>한정판 포토카드 컬렉션</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <button id="blackpink" class="floating-btn">
+      <span class="btn-text">블랙핑크</span>
+      <span class="btn-emoji">✨</span>
+    </button>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2025 BLACKPINK Fan Site. Made with 💖 by 포항원동초등학교</p>
+        <div class="social-links">
+          <span class="social-icon">🎵</span>
+          <span class="social-icon">📱</span>
+          <span class="social-icon">📺</span>
+        </div>
+      </div>
+    </footer>
+
     <script src="script.js"></script>
   </body>
 </html>
